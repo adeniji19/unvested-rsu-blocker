@@ -1,0 +1,1 @@
+It's been several years and Fidelity has not added a feature to block unvested RSUs from showing up and being added to your portfolio. This extension was created in an effort to display only accurate, vested balances in a Fidelity portfolio.

@@ -1,0 +1,29 @@
+{
+  "name": "Unvested RSU Blocker",
+  "description": "Hide unvested RSU value from fidelity",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "block_unvested_rsu.html",
+    "default_icon": "ursu_icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["scripting", "activeTab", "webNavigation", "storage"],
+  "host_permissions": ["*://*.fidelity.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.fidelity.com/*"],
+      "js": ["blocker.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["*://*.fidelity.com/*"]
+    }
+  ]
+}
