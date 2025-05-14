@@ -10,7 +10,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["scripting", "activeTab", "webNavigation", "storage"],
+  "permissions": ["scripting", "activeTab", "webNavigation"],
   "host_permissions": ["*://*.fidelity.com/*"],
   "content_scripts": [
     {
@@ -18,12 +18,6 @@
       "js": ["blocker.js"],
       "run_at": "document_end",
       "all_frames": true
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["inject.js"],
-      "matches": ["*://*.fidelity.com/*"]
     }
   ]
 }
