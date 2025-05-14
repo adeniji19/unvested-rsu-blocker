@@ -7,15 +7,15 @@
     "default_popup": "block_unvested_rsu.html",
     "default_icon": "ursu_icon.png"
   },
+  "permissions": ["scripting", "activeTab", "webNavigation"],
+  "host_permissions": ["*://*.fidelity.com/*"],
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["scripting", "activeTab", "webNavigation"],
-  "host_permissions": ["*://*.fidelity.com/*"],
   "content_scripts": [
     {
       "matches": ["*://*.fidelity.com/*"],
-      "js": ["blocker.js"],
+      "js": ["content.js"],
       "run_at": "document_end",
       "all_frames": true
     }

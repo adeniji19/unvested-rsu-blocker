@@ -1,6 +1,6 @@
-chrome.runtime.onConnect.addListener(function(port) {
-    if (port.name === "balanceModifier") {
-      port.onMessage.addListener(function(msg) {
-      });
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.action === 'updateBalance') {
+        console.log('Message received in background script:', request);
+        sendResponse({status: true});
     }
-  });
+});
